@@ -1,7 +1,7 @@
 let rep = document.querySelector(".repo__view");
 let repParent = document.querySelector(".repo");
 let addRepo = document.querySelector(".repo__save");
-let input = document.querySelector(".repo__save");
+let input = document.querySelector(".repo__unput");
 
 document.querySelector("input").addEventListener(
   "input",
@@ -15,7 +15,7 @@ document.querySelector("input").addEventListener(
       .then((data) => {
         renderData(data);
       });
-  }, 500)
+	}, 500)
 );
 
 function renderData(data) {
@@ -23,7 +23,8 @@ function renderData(data) {
     repParent.classList.remove("active");
     return;
   } else {
-    repParent.classList.add("active");
+	 repParent.classList.add("active");
+    rep.innerHTML = "";
     for (let key of data.items) {
       elemAutocomplete(key);
     }
@@ -37,7 +38,9 @@ function elemAutocomplete(elem) {
   rep.append(dropdownItem);
   dropdownItem.addEventListener("click", () => {
     addRepositories(elem);
-   //  input.textContent = "";
+    input.value = "";
+	 renderData();
+	 rep.innerHTML = "";
   });
 }
 
@@ -80,13 +83,3 @@ function debounce(callback, delay) {
   };
 }
 
-// function renderData(data){
-// if (document.querySelector(".repo__unput").value == '') return
-// if (data.total_count > 0) {
-//    repParent.classList.add("active");
-//    for (let key of data.items) {
-//      elemAutocomplete(key);
-//    }
-// } else {
-//    repParent.classList.remove("active");
-// }}
