@@ -1,0 +1,73 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+.wrapper{
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+}
+.container{
+	max-width: 661px;
+	margin: 0 auto;
+
+	background: rgba(196, 196, 196, 1);
+}
+.repo{
+	padding: 62px 78px;
+}
+.repo__unput{
+	outline: none;
+	border: none;
+	display: block;
+	width: 100%;
+	font-size: 48px;
+	padding: 2px 5px;
+}
+.repo__unput::placeholder {
+	font-size: 30px;
+	padding: 5px;
+}
+.repo__show{
+	display: none;
+	background: rgba(227, 227, 227, 1);
+	font-size: 30px;
+	font-weight: 400;
+	border: 2px solid rgba(0, 0, 0, 1);
+	cursor: pointer;
+	width: 100%;
+}
+
+.repo.active .repo__show{
+	display: block;
+	background: rgba(227, 227, 227, 1);
+
+}
+.repo.active .repo__show:hover{
+	background-color: rgba(101, 205, 249, 1);
+}
+.repo__view{
+	margin-bottom: 45px;
+}
+
+.repo__save-body{
+	border: 1px solid rgba(0, 0, 0, 1);
+	background: rgba(226, 123, 235, 1);
+	padding: 8px 17px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.repo__save-called > div{
+	font-size: 24px;
+}
+.repo__delete{
+	cursor: pointer;
+	background: inherit;
+	border: none;
+	font-size: 50px;
+	color: rgba(255, 0, 0, 1);
+}
